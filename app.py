@@ -17,6 +17,13 @@ def home_page():
 def profile(name):
 	return render_template('index.html', name=name)
 
+@app.route('/reverse_sentence', methods=['GET','POST'])
+def reverse_sentence_post():
+	if request.method == 'GET':
+		return render_template('multiply_numbers.html')
+	elif request.method == 'POST':
+		name = 'ankita'
+		return render_template('multiply_numbers.html', result=str(name))
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
@@ -50,14 +57,6 @@ def multiply_numbers_post():
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
 	
-@app.route('/reverse_sentence', methods=['GET','POST'])
-def reverse_sentence():
-	  # --> ['5', '6', '8']
-	  # print(type(request.form['text']))
-	  name = request.form['text']
-  	  return render_template('multiply_numbers.html', result=str(total))
-  	     
-
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
 	  # --> ['5', '6', '8']
