@@ -27,6 +27,7 @@ def add_numbers_post():
 	  elif request.method == 'POST':
   	      print(request.form['text'].split())
   	      total = 0
+	      a = 5
   	      try:
   	      	for str_num in request.form['text'].split():
   	      		total += int(str_num)
