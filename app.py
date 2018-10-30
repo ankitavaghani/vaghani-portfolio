@@ -49,6 +49,14 @@ def multiply_numbers_post():
   	      	return render_template('multiply_numbers.html', result=str(total))
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
+	
+@app.route('/reverse_sentence', methods=['GET','POST'])
+def reverse_sentence():
+	  # --> ['5', '6', '8']
+	  # print(type(request.form['text']))
+	  name = request.form['text']
+  	  print(name[::-1])
+  	     
 
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
