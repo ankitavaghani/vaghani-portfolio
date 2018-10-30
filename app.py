@@ -23,7 +23,7 @@ def pattern_post():
 		return render_template('pattern.html')
 	elif request.method == 'POST':
 		sentence = str(request.form['text'])
-		return render_template('pattern.html', result='abc')
+		return render_template('pattern.html', result='a\nab\nabc\n')
 	
 @app.route('/reverse_sentence', methods=['GET','POST'])
 
