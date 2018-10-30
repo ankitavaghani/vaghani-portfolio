@@ -18,7 +18,6 @@ def profile(name):
 	return render_template('index.html', name=name)
 
 @app.route('/reverse_sentence', methods=['GET','POST'])
-
 def reverse_sentence_post():
 	if request.method == 'GET':
 		return render_template('reverse_sentence.html')
@@ -28,18 +27,13 @@ def reverse_sentence_post():
 
 @app.route('/square_number', methods=['GET','POST'])
 def square_number_post():
-	  if request.method == 'GET':
-	  	return render_template('square_number.html')
-	  elif request.method == 'POST':
-  	      print(request.form['text'].split())
-  	      total = 0
-  	      try:
-  	      	number = request.form['text']
-  	      	total = number ** 2
-  	      	return render_template('multiply_numbers.html', result=str(total))
-  	      except ValueError:
-  	      	return "Easy now! Let's keep it simple! only one number"
+	if request.method == 'GET':
+		return render_template('square_number.html')
+	elif request.method == 'POST':
+		number = int(request.form['text'])
+		return render_template('square_number.html', result=number**2)
 
+	
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
 	  # --> ['5', '6', '8']
