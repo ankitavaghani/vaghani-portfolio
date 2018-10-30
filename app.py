@@ -17,7 +17,16 @@ def home_page():
 def profile(name):
 	return render_template('index.html', name=name)
 
+@app.route('/pattern', methods=['GET','POST'])
+def pattern_post():
+	if request.method == 'GET':
+		return render_template('pattern.html')
+	elif request.method == 'POST':
+		sentence = str(request.form['text'])
+		return render_template('pattern.html', result='abc')
+	
 @app.route('/reverse_sentence', methods=['GET','POST'])
+
 def reverse_sentence_post():
 	if request.method == 'GET':
 		return render_template('reverse_sentence.html')
