@@ -15,7 +15,7 @@ def home_page():
 
 @app.route('/<name>')
 def profile(name):
-	return render_template('reverse_sentence.html', name=name)
+	return render_template('index.html', name=name)
 
 @app.route('/reverse_sentence', methods=['GET','POST'])
 def reverse_sentence_post():
@@ -24,7 +24,7 @@ def reverse_sentence_post():
 	elif request.method == 'POST':
 		name = 'ankita'
 		return render_template('reverse_sentence.html', result=str(name))'''
-	return render_template('index.html')
+	return render_template('reverse_sentence.html')
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
