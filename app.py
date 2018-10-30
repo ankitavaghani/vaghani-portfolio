@@ -30,10 +30,12 @@ def square_number_post():
 	if request.method == 'GET':
 		return render_template('square_number.html')
 	elif request.method == 'POST':
-		number = int(request.form['text'])
-		return render_template('square_number.html', result=number**2)
-
-	
+		try:
+			number = int(request.form['text'])
+			return render_template('square_number.html', result=number**2)
+		except ValueError:
+  	      		return "Easy now! Let's keep it simple! only 1 number please"
+		
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
 	  # --> ['5', '6', '8']
