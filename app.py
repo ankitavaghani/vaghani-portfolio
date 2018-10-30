@@ -55,7 +55,7 @@ def reverse_sentence():
 	  # --> ['5', '6', '8']
 	  # print(type(request.form['text']))
 	  name = request.form['text']
-  	  print(name[::-1])
+  	  return render_template('multiply_numbers.html', result=str(total))
   	     
 
 @app.route('/shopping_list', methods=['GET','POST'])
