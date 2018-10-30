@@ -19,12 +19,11 @@ def profile(name):
 
 @app.route('/reverse_sentence', methods=['GET','POST'])
 def reverse_sentence_post():
-	'''if request.method == 'GET':
+	if request.method == 'GET':
 		return render_template('reverse_sentence.html')
 	elif request.method == 'POST':
 		name = 'ankita'
-		return render_template('reverse_sentence.html', result=str(name))'''
-	return render_template('reverse_sentence.html', result=str('ankita'))
+		return render_template('reverse_sentence.html', result=str('ankita'))
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
