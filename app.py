@@ -65,12 +65,11 @@ def square_number_post():
 	  if request.method == 'GET':
 	  	return render_template('square_number.html')
 	  elif request.method == 'POST':
-  	      print(request.form['text'].split())
-  	      total = 0
+  	      #print(request.form['text'].split())
+  	      number = 0
   	      try:
-  	      	number = request.form['text']
-  	      	total = number ** number
-  	      	return render_template('square_number.html', result=str(total))
+  	      	number = int(request.form['text'] ** 2)
+  	      	return render_template('square_number.html', result=str(number))
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! only one number please"
 	
