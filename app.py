@@ -26,6 +26,20 @@ def reverse_sentence_post():
 		sentence = str(request.form['text'])
 		return render_template('reverse_sentence.html', result=sentence[::-1])
 
+@app.route('/square_number', methods=['GET','POST'])
+def square_number_post():
+	  if request.method == 'GET':
+	  	return render_template('square_number.html')
+	  elif request.method == 'POST':
+  	      print(request.form['text'].split())
+  	      total = 0
+  	      try:
+  	      	number = request.form['text']
+  	      	total = number ** 2
+  	      	return render_template('multiply_numbers.html', result=str(total))
+  	      except ValueError:
+  	      	return "Easy now! Let's keep it simple! only one number"
+
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
 	  # --> ['5', '6', '8']
@@ -57,21 +71,6 @@ def multiply_numbers_post():
   	      	return render_template('multiply_numbers.html', result=str(total))
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
-
-@app.route('/square_number', methods=['GET','POST'])
-def square_number_post():
-	  # --> ['5', '6', '8']
-	  # print(type(request.form['text']))
-	  if request.method == 'GET':
-	  	return render_template('square_number.html')
-	  elif request.method == 'POST':
-  	      #print(request.form['text'].split())
-  	      number = 0
-  	      try:
-  	      	number = int(request.form['text'] ** 2)
-  	      	return render_template('square_number.html', result=str(number))
-  	      except ValueError:
-  	      	return "Easy now! Let's keep it simple! only one number please"
 	
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
