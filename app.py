@@ -22,8 +22,8 @@ def reverse_sentence_post():
 	if request.method == 'GET':
 		return render_template('reverse_sentence.html')
 	elif request.method == 'POST':
-		name = 'ankita'
-		return render_template('reverse_sentence.html', result=str('ankita'))
+		sentence = str(request.form['text'])
+		return render_template('reverse_sentence.html', result=sentence[::-1])
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
